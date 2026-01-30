@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://r6p2q8cbwneu"]
+
+[ext_resource type="PackedScene" uid="uid://chbdce2xttahq" path="res://Models/bulldozer.glb" id="1_v0iea"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v0iea"]
+size = Vector3(1, 1, 1.8252258)
+
+[node name="Player" type="CharacterBody3D" unique_id=881959841]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1693171116]
+
+[node name="bulldozer" parent="Mesh" unique_id=762707843 instance=ExtResource("1_v0iea")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1421913123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4825306, -0.096084595)
+shape = SubResource("BoxShape3D_v0iea")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1659621122]
+transform = Transform3D(1, 0, 0, 0, 0.9281289, 0.37225896, 0, -0.37225896, 0.9281289, 0, 1.5525453, 2.1440856)
