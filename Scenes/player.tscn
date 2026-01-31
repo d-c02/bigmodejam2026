@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://r6p2q8cbwneu"]
 
+[ext_resource type="Script" uid="uid://b6tv2lcpue2e4" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://chbdce2xttahq" path="res://Models/bulldozer.glb" id="1_v0iea"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v0iea"]
 size = Vector3(1, 1, 1.8252258)
 
 [node name="Player" type="CharacterBody3D" unique_id=881959841]
+script = ExtResource("1_cvnsp")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=1693171116]
+unique_name_in_owner = true
 
 [node name="bulldozer" parent="Mesh" unique_id=762707843 instance=ExtResource("1_v0iea")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
