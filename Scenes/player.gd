@@ -24,11 +24,16 @@ func _physics_process(delta: float) -> void:
 				m_velocity += m_deceleration * delta * forward
 			else:
 				m_velocity += m_acceleration * delta * forward
-		if (Input.is_action_pressed("decelerate")):
+		elif (Input.is_action_pressed("decelerate")):
 			if (m_velocity.dot(back) < 0):
 				m_velocity += m_deceleration * delta * back
 			else:
 				m_velocity += m_acceleration * delta * back
+		else:
+			if (m_velocity.dot(forward) > 0):
+				m_velocity += m_acceleration * delta * back
+			elif (m_velocity.dot(back) > 0):
+				m_velocity += m_acceleration * delta * forward
 		if (Input.is_action_pressed("turn_right")):
 			m_velocity = m_velocity.rotated(Vector3.UP, -m_turnSpeed * (m_velocity.length() / m_turnVelocityScaling) * delta)
 		if (Input.is_action_pressed("turn_left")):
