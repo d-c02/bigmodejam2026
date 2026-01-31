@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://csraygllndq6e"]
 
 [ext_resource type="Texture2D" uid="uid://2l86lpmjptqc" path="res://Textures/PNG/checker_512x512/checker_white_512x512.png" id="1_2bldp"]
-[ext_resource type="PackedScene" uid="uid://r6p2q8cbwneu" path="res://Scenes/player.tscn" id="1_2ynb8"]
+[ext_resource type="PackedScene" uid="uid://dtx7f7x5w6j63" path="res://Scenes/sphere_car.tscn" id="3_8pf2f"]
+[ext_resource type="Texture2D" uid="uid://c47bg1rf3mx3x" path="res://Textures/PNG/checker_512x512/checker_red_512x512.png" id="3_owteh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qddvg"]
 size = Vector3(100, 1, 100)
@@ -14,6 +15,15 @@ albedo_texture = ExtResource("1_2bldp")
 uv1_scale = Vector3(100, 100, 100)
 texture_filter = 0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8pf2f"]
+size = Vector3(5, 1, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4bv8r"]
+size = Vector3(5, 1, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sl5l8"]
+albedo_texture = ExtResource("3_owteh")
+
 [node name="Testmap" type="Node3D" unique_id=1658222439]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1059875529]
@@ -25,8 +35,19 @@ shape = SubResource("BoxShape3D_qddvg")
 mesh = SubResource("BoxMesh_2ynb8")
 surface_material_override/0 = SubResource("StandardMaterial3D_owteh")
 
-[node name="Player" parent="." unique_id=881959841 instance=ExtResource("1_2ynb8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.566741, 0)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1795939143]
 transform = Transform3D(-0.6723538, 0.051798888, 0.73841536, 0.69448984, -0.30108082, 0.6534785, 0.25617212, 0.95219064, 0.16645901, 58.1829, 36.385765, 0)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=18895388]
+transform = Transform3D(1, 0, 0, 0, 0.9171923, -0.39844495, 0, 0.39844495, 0.9171923, 0, 0.6043284, -10.345872)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=727352264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008239746, 0, 0)
+shape = SubResource("BoxShape3D_8pf2f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=1779974631]
+mesh = SubResource("BoxMesh_4bv8r")
+surface_material_override/0 = SubResource("StandardMaterial3D_sl5l8")
+
+[node name="SphereCar" parent="." unique_id=452002719 instance=ExtResource("3_8pf2f")]
+transform = Transform3D(0.475, 0, 0, 0, 0.475, 0, 0, 0, 0.475, 0, 1.8927622, 0)
