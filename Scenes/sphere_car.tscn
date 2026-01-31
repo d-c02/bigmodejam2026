@@ -39,6 +39,8 @@ transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, 0, -1, 0)
 [node name="raycast" type="RayCast3D" parent="mesh" unique_id=281759698]
 unique_name_in_owner = true
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+hit_from_inside = true
+debug_shape_custom_color = Color(1, 0, 0, 1)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=414485235]
 transform = Transform3D(1, 0, 0, 0, 0.94797975, 0.31833068, 0, -0.31833068, 0.94797975, 0, 2.785099, 6.3863616)
