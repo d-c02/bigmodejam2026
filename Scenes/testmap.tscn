@@ -50,4 +50,3 @@ mesh = SubResource("BoxMesh_4bv8r")
 surface_material_override/0 = SubResource("StandardMaterial3D_sl5l8")
 
 [node name="SphereCar" parent="." unique_id=452002719 instance=ExtResource("3_8pf2f")]
-transform = Transform3D(0.475, 0, 0, 0, 0.475, 0, 0, 0, 0.475, 0, 1.8927622, 0)

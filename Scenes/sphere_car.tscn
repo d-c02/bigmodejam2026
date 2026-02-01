@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dtx7f7x5w6j63"]
 
-[ext_resource type="PackedScene" uid="uid://chbdce2xttahq" path="res://Models/bulldozer.glb" id="1_5savg"]
 [ext_resource type="Script" uid="uid://djacxk3assysx" path="res://Scenes/sphere_car.gd" id="1_cbnq8"]
+[ext_resource type="PackedScene" uid="uid://h42mudhq2gdw" path="res://Models/tinybrute.glb" id="2_cbnq8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbnq8"]
 
@@ -16,16 +16,15 @@ script = ExtResource("1_cbnq8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=718584098]
 shape = SubResource("SphereShape3D_jrym5")
 
-[node name="mesh" parent="." unique_id=762707843 instance=ExtResource("1_5savg")]
-unique_name_in_owner = true
-transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, 0, -1, 0)
+[node name="mesh" parent="." unique_id=723027539 instance=ExtResource("2_cbnq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 top_level = true
 
 [node name="raycast" type="RayCast3D" parent="mesh" unique_id=281759698]
 unique_name_in_owner = true
-transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 1.24, 0)
-target_position = Vector3(0, -2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5617266, 0)
+hit_from_inside = true
 debug_shape_custom_color = Color(1, 0, 0, 1)
 
 [node name="Camera3D" type="Camera3D" parent="mesh" unique_id=414485235]
-transform = Transform3D(2.3529413, 0, 0, 0, 2.2305408, 0.74901336, 0, -0.74901336, 2.2305408, 0, 8.906116, 15.026733)
+transform = Transform3D(1, 0, 0, 0, 0.94797975, 0.31833065, 0, -0.31833065, 0.94797975, 0, 3.7850993, 6.386362)
